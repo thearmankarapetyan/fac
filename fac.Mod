@@ -8,12 +8,17 @@ PROCEDURE fac* (n : INTEGER)
    i : INTEGER
    k : INTEGER
 BEGIN
-  k:= 1;
-WHILE i <= n DO
-	k = k * i;
-RETURN k;
+ IF n = 0 THEN
+	k := 1;
+ELSE
+   k := n * k*(n - 1);
+END;
 
+VAR 
+  n: INTEGER;
 
-
+BEGIN 
+  n : ARRAY 16 OF CHAR;
+	Out.String(n, '! = ', k(n)); Out.Ln;
 END fac.
-# fac
+
